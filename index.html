@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>سیاه‌قلم | نقاشی با قلم و جوهر</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Aref+Ruqaa:wght@400;700&family=Vazirmatn:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+:root{--paper:#E6E6E1;--ink:#15161B;--graphite:#575962;--seal:#2B3FA3;--rule:rgba(21,22,27,.28);--dark:0;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);color-scheme:light}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--paper:#131419;--ink:#E9E8E3;--graphite:#9B9DA7;--seal:#8FA2FF;--rule:rgba(233,232,227,.28);--dark:1;color-scheme:dark}}
+:root[data-theme="dark"]{--paper:#131419;--ink:#E9E8E3;--graphite:#9B9DA7;--seal:#8FA2FF;--rule:rgba(233,232,227,.28);--dark:1;color-scheme:dark}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-behavior:smooth;scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--paper);color:var(--ink);font:300 1.0625rem/1.9 "Vazirmatn",Tahoma,sans-serif;overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.07;mix-blend-mode:multiply;
+background:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='2'/></filter><rect width='160' height='160' filter='url(%23n)'/></svg>")}
+:root[data-theme="dark"] body::before{mix-blend-mode:screen;opacity:.05}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) body::before{mix-blend-mode:screen;opacity:.05}}
+.wrap{max-width:1180px;margin:0 auto;padding:0 clamp(1rem,4vw,2.5rem)}
+h1,h2,h3{font-family:"Aref Ruqaa","Vazirmatn",serif;font-weight:700;margin:0;line-height:1.35}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--seal);outline-offset:3px}
+nav{display:flex;align-items:center;justify-content:space-between;padding:1.4rem 0;gap:1rem}
+.logo{font:700 1.9rem "Aref Ruqaa",serif;text-decoration:none}
+nav ul{display:flex;gap:clamp(.9rem,3vw,2rem);list-style:none;margin:0;padding:0;font-size:.95rem}
+nav a{text-decoration:none;background:linear-gradient(currentColor,currentColor) 100% 100%/0 1px no-repeat;transition:background-size .3s}
+nav a:hover{background-size:100% 1px}
+.hero{display:grid;gap:2rem;align-items:center;padding:1rem 0 4.5rem}
+@media(min-width:880px){.hero{grid-template-columns:1fr 1.05fr;padding-top:2rem}}
+h1{font-size:clamp(3.4rem,9vw,7rem);line-height:1.2}
+.lead{max-width:30rem;color:var(--graphite);font-size:1.15rem;margin:1.2rem 0 2rem}
+.btns{display:flex;flex-wrap:wrap;gap:.8rem}
+.btn{display:inline-block;padding:.7rem 1.5rem;border:1.5px solid var(--ink);text-decoration:none;font-weight:600;font-size:.98rem;border-radius:2px;transition:background .25s,color .25s}
+.btn.solid{background:var(--ink);color:var(--paper)}
+.btn:hover{background:var(--seal);border-color:var(--seal);color:#fff}
+.stage{position:relative}
+.stage canvas{display:block;width:100%;aspect-ratio:1/1}
+.hint{font-size:.85rem;color:var(--graphite);margin:.4rem 0 0}
+.seal{position:absolute;bottom:6%;inset-inline-start:2%;width:74px;height:74px;display:grid;place-items:center;background:var(--seal);color:var(--paper);font:700 2.4rem "Aref Ruqaa",serif;border-radius:6px;transform:rotate(-7deg);opacity:0;animation:stamp .5s cubic-bezier(.3,1.6,.5,1) 3.4s forwards}
+.seal::after{content:"";position:absolute;inset:5px;border:1.5px solid currentColor;border-radius:3px;opacity:.7}
+@keyframes stamp{from{opacity:0;transform:rotate(-14deg) scale(1.9)}to{opacity:.93;transform:rotate(-7deg) scale(1)}}
+section{padding:4.5rem 0}
+h2{font-size:clamp(2.1rem,5vw,3.2rem);margin-bottom:2.2rem}
+.works{display:grid;gap:clamp(1.2rem,3vw,2.2rem)}
+@media(min-width:760px){.works{grid-template-columns:7fr 5fr}.works .big{grid-row:span 2}}
+.frame{margin:0;border:1px solid var(--ink);padding:clamp(.6rem,1.6vw,1.1rem)}
+.frame canvas{display:block;width:100%}
+.big canvas{aspect-ratio:1/1}.sm canvas{aspect-ratio:5/3}
+figcaption{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;padding-top:.7rem;border-top:1px solid var(--rule);margin-top:.7rem;font-size:.88rem;color:var(--graphite)}
+figcaption b{font:700 1.25rem "Aref Ruqaa",serif;color:var(--ink)}
+.steps{position:relative;padding-inline-start:3rem;max-width:44rem}
+.rail{position:absolute;inset-block:0;inset-inline-start:0;width:14px;height:100%}
+.rail path{fill:none;stroke:var(--ink);stroke-width:3;stroke-linecap:round;stroke-dasharray:1;stroke-dashoffset:1;vector-effect:non-scaling-stroke}
+.rail .ghost{stroke:var(--rule);stroke-width:1;stroke-dashoffset:0}
+.step{padding:0 0 2.6rem}
+.step h3{font-size:1.9rem}
+.step h3 span{color:var(--seal);margin-inline-end:.5rem}
+.step p{margin:.2rem 0 0;color:var(--graphite);max-width:32rem}
+.dark{background:var(--ink);color:var(--paper)}
+.dark h2{margin-bottom:1.6rem}
+.row{display:grid;gap:.3rem 2rem;padding:1.6rem 0;border-top:1px solid color-mix(in srgb,var(--paper) 30%,transparent)}
+@media(min-width:760px){.row{grid-template-columns:14rem 1fr auto;align-items:center}}
+.row h3{font-size:1.7rem}.row p{margin:0;opacity:.8}.row small{opacity:.7;white-space:nowrap}
+.dark .btn{border-color:var(--paper);margin-top:2rem}
+.dark .btn.solid{background:var(--paper);color:var(--ink)}
+.dark .btn:hover{background:var(--seal);color:#fff;border-color:var(--seal)}
+.contact{text-align:center}
+.contact p{max-width:30rem;margin:0 auto 2rem;color:var(--graphite)}
+footer{padding:2rem 0 3rem;border-top:1px solid var(--rule);font-size:.88rem;color:var(--graphite)}
+footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:.6rem}
+@media(prefers-reduced-motion:reduce){.seal{animation:none;opacity:.93;transform:rotate(-7deg)}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<nav>
+  <a class="logo" href="#top">سیاه‌قلم</a>
+  <ul>
+    <li><a href="#works">نمونه‌کارها</a></li>
+    <li><a href="#process">روند کار</a></li>
+    <li><a href="#classes">کارگاه‌ها</a></li>
+    <li><a href="#contact">سفارش</a></li>
+  </ul>
+</nav>
+
+<header class="hero" id="top">
+  <div>
+    <h1>هر خط، یک تصمیم.</h1>
+    <p class="lead">نقاشی با قلم و جوهر مشکی؛ سفارش طرح اختصاصی، قاب‌شده و امضاشده، و کارگاه‌های آموزشی برای کسانی که می‌خواهند با خط، نور بسازند.</p>
+    <div class="btns">
+      <a class="btn solid" href="#works">دیدن نمونه‌کارها</a>
+      <a class="btn" href="#classes">ثبت‌نام در کارگاه</a>
+    </div>
+  </div>
+  <div class="stage">
+    <canvas id="hero" role="img" aria-label="کره‌ای که با خطوط موازی قلم هاشور خورده است"></canvas>
+    <div class="seal" aria-hidden="true">س</div>
+    <p class="hint">نشانگر را روی تصویر حرکت بده تا نور جابه‌جا شود.</p>
+  </div>
+</header>
+</div>
+
+<section id="works">
+  <div class="wrap">
+    <h2>سه اثر، هزاران خط</h2>
+    <div class="works">
+      <figure class="frame big"><canvas data-f="hills" role="img" aria-label="تپه‌های هاشورخورده"></canvas>
+        <figcaption><b>تپه‌های بلند</b><span>۵۰×۵۰ سانتی‌متر، جوهر روی کاغذ ۳۰۰ گرمی</span></figcaption></figure>
+      <figure class="frame sm"><canvas data-f="ripple" role="img" aria-label="موج روی آب"></canvas>
+        <figcaption><b>موج روی آب</b><span>۴۰×۲۴ سانتی‌متر</span></figcaption></figure>
+      <figure class="frame sm"><canvas data-f="dunes" role="img" aria-label="تل‌های شن"></canvas>
+        <figcaption><b>تل‌های شن</b><span>۴۰×۲۴ سانتی‌متر</span></figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section id="process">
+  <div class="wrap">
+    <h2>از مداد تا امضا</h2>
+    <div class="steps">
+      <svg class="rail" viewBox="0 0 10 400" preserveAspectRatio="none" aria-hidden="true">
+        <path class="ghost" pathLength="1" d="M5 0C9 50 1 100 5 150S9 250 5 300S1 350 5 400"/>
+        <path pathLength="1" d="M5 0C9 50 1 100 5 150S9 250 5 300S1 350 5 400"/>
+      </svg>
+      <div class="step"><h3><span>۱</span>طرح اولیه</h3><p>با مداد نرم، ترکیب‌بندی و نسبت‌ها را روی کاغذ پیدا می‌کنیم.</p></div>
+      <div class="step"><h3><span>۲</span>خط‌گذاری</h3><p>قلم جوهری را بدون پاک‌کن روی خطوط اصلی می‌کشیم.</p></div>
+      <div class="step"><h3><span>۳</span>هاشور و سایه</h3><p>با خطوط موازی و نقطه‌ها، نور و حجم ساخته می‌شود.</p></div>
+      <div class="step"><h3><span>۴</span>امضا و قاب</h3><p>اثر را امضا می‌کنیم و همراه گواهی اصالت قاب می‌کنیم.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="dark" id="classes">
+  <div class="wrap">
+    <h2>کارگاه‌های سیاه‌قلم</h2>
+    <div class="row"><h3>مقدماتی</h3><p>خط، نقطه و هاشور؛ ۶ جلسه برای کسانی که اولین بار قلم دست می‌گیرند.</p><small>ظرفیت ۸ نفر</small></div>
+    <div class="row"><h3>میانی</h3><p>نور و سایه روی سطح؛ ۸ جلسه حجم‌سازی با هاشور و نقطه‌چین.</p><small>ظرفیت ۶ نفر</small></div>
+    <div class="row"><h3>پیشرفته</h3><p>طرح شخصی؛ ۱۰ جلسه که در پایان هر هنرجو یک اثر قاب‌شده دارد.</p><small>ظرفیت ۴ نفر</small></div>
+    <a class="btn solid" href="#contact">ثبت‌نام در کارگاه</a>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="wrap">
+    <h2>طرح اختصاصی سفارش بده</h2>
+    <p>موضوع و اندازه‌ی اثر را برایمان بفرست؛ در دو روز کاری با پیشنهاد طرح و زمان تحویل پاسخ می‌دهیم.</p>
+    <a class="btn solid" href="mailto:hello@example.com">ارسال سفارش</a>
+  </div>
+</section>
+
+<footer><div class="wrap"><span>سیاه‌قلم، ۱۴۰۵</span><span>hello@example.com</span></div></footer>
+
+<script>
+(function(){
+var clamp=function(x,a,b){return Math.min(b,Math.max(a,x))};
+var reduce=matchMedia("(prefers-reduced-motion: reduce)").matches;
+var F={
+ sphere:function(u,v){var x=(u-.5)*2,y=(v-.5)*2.1,r=x*x+y*y;return r<1?Math.sqrt(1-r):0},
+ hills:function(u,v){var g=function(a,b,s,h){return h*Math.exp(-((u-a)*(u-a)+(v-b)*(v-b))/s)};return g(.3,.55,.035,.9)+g(.7,.5,.05,1)+g(.5,.78,.02,.5)},
+ ripple:function(u,v){var x=(u-.5)*2,y=(v-.5)*2,r=Math.sqrt(x*x+y*y);return Math.max(0,.55+.45*Math.cos(r*11))*Math.exp(-r*1.5)},
+ dunes:function(u,v){return (Math.sin(u*6+v*4)*.5+.5)*Math.sin(Math.PI*u)*Math.sin(Math.PI*clamp(v*1.1,0,1))}
+};
+var cfg={sphere:[64,260,.36],hills:[56,240,.3],ripple:[40,220,.5],dunes:[40,220,.45]};
+var pieces=[],raf=0,col={ink:"#000",dark:0};
+function colors(){var s=getComputedStyle(document.documentElement);col.ink=s.getPropertyValue("--ink").trim();col.dark=+s.getPropertyValue("--dark")||0}
+function make(c,type){var k=cfg[type];return{c:c,f:F[type],n:k[0],N:k[1],amp:k[2],L:{x:-.5,y:-.55},T:{x:-.5,y:-.55},t0:null,dirty:true,dur:k[0]*.03+1.4}}
+function size(p){var d=Math.min(devicePixelRatio||1,2),r=p.c.getBoundingClientRect();p.c.width=Math.round(r.width*d);p.c.height=Math.round(r.height*d);p.dirty=true}
+function render(p,t){
+ var c=p.c,x=c.getContext("2d"),W=c.width,H=c.height,n=p.n,N=p.N,gap=H*.9/(n+1),f=p.f,e=.01;
+ var lz=.55,ln=Math.sqrt(p.L.x*p.L.x+p.L.y*p.L.y+lz*lz),lx=p.L.x/ln,ly=p.L.y/ln,lzn=lz/ln;
+ var base=lzn;
+ x.clearRect(0,0,W,H);x.fillStyle=col.ink;
+ for(var i=1;i<=n;i++){
+  var prog=clamp((t-i*.03)/1.4,0,1);if(prog<=0)continue;
+  var v=i/(n+1),m=Math.max(2,Math.floor(N*prog)),j0=0,j1=m;
+  if(i%2){j0=N-m;j1=N}
+  var xs=[],ys=[],ws=[];
+  for(var j=j0;j<=j1;j++){
+   var u=j/N,h=f(u,v);
+   var gx=(f(u+e,v)-f(u-e,v))/(2*e),gy=(f(u,v+e)-f(u,v-e))/(2*e);
+   var nx=-gx*.6,ny=-gy*.6,nl=Math.sqrt(nx*nx+ny*ny+1);
+   var lit=(nx*lx+ny*ly+lzn)/nl,sd=lit-base;
+   var q=col.dark?clamp(.15+sd*2.4,0,1):clamp(.2-sd*1.7,0,1);
+   xs.push(u*W);
+   ys.push((.05+v*.9)*H-h*p.amp*H+Math.sin(u*37+i*1.7)*.0012*H);
+   ws.push(gap*(.1+.9*Math.pow(q,1.2)));
+  }
+  x.beginPath();
+  for(var a=0;a<xs.length;a++)x.lineTo(xs[a],ys[a]-ws[a]/2);
+  for(var b=xs.length-1;b>=0;b--)x.lineTo(xs[b],ys[b]+ws[b]/2);
+  x.closePath();x.fill();
+ }
+}
+function tick(now){
+ var busy=false;
+ for(var k=0;k<pieces.length;k++){
+  var p=pieces[k];if(p.t0===null)continue;
+  var t=reduce?99:(now-p.t0)/1000,dx=p.T.x-p.L.x,dy=p.T.y-p.L.y;
+  var mv=Math.abs(dx)+Math.abs(dy)>.003,rv=t<p.dur;
+  if(mv){p.L.x+=dx*.14;p.L.y+=dy*.14}
+  if(mv||rv||p.dirty){render(p,t);p.dirty=false}
+  busy=busy||mv||rv;
+ }
+ raf=busy?requestAnimationFrame(tick):0;
+}
+function wake(){if(!raf)raf=requestAnimationFrame(tick)}
+colors();
+pieces.push(make(document.getElementById("hero"),"sphere"));
+document.querySelectorAll("canvas[data-f]").forEach(function(c){pieces.push(make(c,c.dataset.f))});
+pieces.forEach(size);
+var io=new IntersectionObserver(function(es){es.forEach(function(en){
+ if(en.isIntersecting){var p=pieces.find(function(q){return q.c===en.target});if(p&&p.t0===null){p.t0=performance.now();wake()}}
+})},{threshold:.25});
+pieces.forEach(function(p){io.observe(p.c)});
+addEventListener("pointermove",function(ev){
+ pieces.forEach(function(p){
+  if(p.t0===null)return;var r=p.c.getBoundingClientRect();
+  if(r.bottom<-200||r.top>innerHeight+200)return;
+  var cx=r.left+r.width/2,cy=r.top+r.height/2;
+  p.T.x=clamp((ev.clientX-cx)/(innerWidth/2),-1.3,1.3);
+  p.T.y=clamp((ev.clientY-cy)/(innerHeight/2),-1.3,1.3);
+ });wake();
+},{passive:true});
+var rt;addEventListener("resize",function(){clearTimeout(rt);rt=setTimeout(function(){pieces.forEach(size);wake()},120)});
+matchMedia("(prefers-color-scheme: dark)").addEventListener("change",function(){colors();pieces.forEach(function(p){p.dirty=true});wake()});
+/* scroll-drawn ink rail */
+var steps=document.querySelector(".steps"),rail=document.querySelectorAll(".rail path")[1];
+function sc(){var r=steps.getBoundingClientRect(),p=clamp((innerHeight*.7-r.top)/r.height,0,1);rail.style.strokeDashoffset=1-p}
+addEventListener("scroll",sc,{passive:true});sc();
+})();
+</script>
+</body>
+</html>
